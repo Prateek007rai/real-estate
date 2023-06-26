@@ -1,0 +1,76 @@
+/* //this active class name appeared for current nav menu */
+
+
+.active{
+   color: white;
+   background-color: rgb(88, 124, 241);
+}
+.pointer{
+   cursor: pointer;
+}
+
+.dropdown-ME:hover{
+   background-color: aliceblue;
+}
+
+.seperator{
+   margin: 30px;
+   text-align: center;
+   color: rgb(158, 161, 163);
+}
+
+.upl_image{
+   margin-top: 7vh;
+   width: 15vw;
+   height: 15vh;
+   align-items: center;
+}
+
+.profile_image{
+   margin-top: 1vh;
+   width: 20vw;
+   height: 35vh;
+   border-radius: 50%;
+   transform: translateX(18.5vw);
+   border: 2px solid grey;
+}
+
+.upl_notify{
+   color: rgb(141, 143, 146);
+   text-align: center;
+}
+
+.hoverable:hover{
+   transform: scale(1.01);
+   box-shadow: 0.4rem 0.4rem 1rem rgba(0,0,0,0.15) !important;
+}
+
+.react-photo-gallery--gallery img{
+   object-fit: cover;
+   height: 60vh !important;
+}
+
+.time{
+   color: rgb(11, 165, 39);
+   font-weight: bold;
+}
+
+.feat_div{
+  background-color: rgb(242, 241, 241);
+  padding-top: 20px;
+}
+
+.related_div {
+   text-align: center;
+   padding-top: 20px;
+   background-color: rgb(253, 244, 244);
+}
+
+.square{
+   border-radius: 0px;
+}
+
+
+.search_container{
+   margin-left: 3rem;
+}
