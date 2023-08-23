@@ -10,7 +10,7 @@ const NodeGeocoder = require('node-geocoder');
 
 
 
-module.exports.DATABASE = "mongodb://127.0.0.1:27017/Reacl-estate_mern";
+module.exports.DATABASE = "mongodb+srv://prateekrai436:moondive@cluster0.iyvl8hh.mongodb.net/mern";
 
 
 
