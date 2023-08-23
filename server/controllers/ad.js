@@ -31,7 +31,7 @@ module.exports.uploadImage = async(req, res) => {
                 res.sendStatus(400);
             }else{
                 console.log(data);
-                res.send(data);
+                res.send(data);                                  //it contains location and other pics related info coming from aws
             }
         })
     }catch(err){
