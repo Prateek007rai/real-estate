@@ -70,6 +70,42 @@ const AdForm = ({action, type}) => {
     }
 
 
+
+    //address using pin code
+    const API_KEY = "AIzaSyAeaI1gkovXnm4yY1AzN97XOmcf1db5aAo";
+  const BASE_URL = "https://maps.googleapis.com/maps/api/geocode/json";
+
+  const [pinCode, setPinCode] = useState("");
+  const [address, setAddress] = useState("");
+
+  const handlePinCodeChange = (event) => {
+    setPinCode(event.target.value);
+  };
+
+  const handleLookupAddress = async() => {
+     axios
+      .get(BASE_URL, {
+        params: {
+          address: pinCode,
+          key: API_KEY,
+        },
+      })
+      .then((response) => {
+        const data = response.data;
+        const results = data.results;
+        console.log("---->", response, data)
+        if (results.length > 0) {
+          setAddress(results[0].formatted_address);
+        } else {
+          setAddress("Address not found.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error occurred while fetching data.", error);
+      });
+  };
+
+
     return ( 
         <>
           <div className='mb-0'>
@@ -93,6 +129,23 @@ const AdForm = ({action, type}) => {
                 value={ad.address}
                 onChange={e => setAd({...ad, address: e.target.value})}
                 />
+
+    <div>
+      <h1>Pin Code to Address Converter</h1>
+      <div>
+        <input
+          type="text"
+          value={pinCode}
+          onChange={handlePinCodeChange}
+          placeholder="Enter Pin Code"
+        />
+        <button onClick={handleLookupAddress} className='mt-5 mb-5'>Lookup Address</button>
+      </div>
+      <div>
+        <p>Address: {address}</p>
+      </div>
+    </div>
+
                 <CurrencyInput
                  className='form-control mb-3'
                 placeholder="Please enter Price"
