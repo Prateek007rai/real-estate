@@ -29,7 +29,7 @@ const Register = () => {
             }
         }catch(err){
             console.log("Error in submiting register form - ", err)
-            toast.error("Something went Wrong !!!");
+            toast.error("Something went much Wrong !!!");
             setLoading(false);  
         }
     }
